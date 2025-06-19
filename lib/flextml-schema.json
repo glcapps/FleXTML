@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://flextml.org/schema/flextml.json",
+  "title": "FleXTML Element",
+  "description": "Schema for a single FleXTML JSON element node.",
+  "type": "object",
+  "required": ["tag"],
+  "properties": {
+    "tag": {
+      "type": "string",
+      "description": "The tag name of the element (e.g. div, p, span)"
+    },
+    "attrs": {
+      "type": "object",
+      "description": "HTML-style attributes",
+      "additionalProperties": {
+        "type": ["string", "number", "boolean"]
+      },
+      "default": {}
+    },
+    "content": {
+      "type": "string",
+      "description": "Optional string content for the element",
+      "default": ""
+    },
+    "children": {
+      "type": "array",
+      "description": "Optional nested elements",
+      "items": {
+        "$ref": "#"
+      }
+    }
+  },
+  "additionalProperties": false
+}

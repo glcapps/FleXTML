@@ -1,0 +1,55 @@
+[
+  {
+    "name": "Basic structure",
+    "input": {
+      "tag": "div",
+      "attrs": { "class": "card" },
+      "children": [
+        { "tag": "h1", "content": "Welcome" },
+        { "tag": "p", "content": "This is a paragraph." }
+      ]
+    }
+  },
+  {
+    "name": "Void element",
+    "input": {
+      "tag": "img",
+      "attrs": { "src": "logo.png", "alt": "Logo" }
+    }
+  },
+  {
+    "name": "Text-only element",
+    "input": {
+      "tag": "span",
+      "content": "Only text content"
+    }
+  },
+  {
+    "name": "Deep nesting",
+    "input": {
+      "tag": "ul",
+      "children": [
+        {
+          "tag": "li",
+          "children": [
+            { "tag": "span", "content": "Item 1" }
+          ]
+        },
+        {
+          "tag": "li",
+          "children": [
+            { "tag": "span", "content": "Item 2" }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "Attributes with data- prefix",
+    "input": {
+      "tag": "button",
+      "attrs": { "data-action": "submit", "type": "button" },
+      "content": "Submit"
+    }
+  }
+]

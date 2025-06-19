@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>FleXTML Demo</title>
+  <script type="module" src="../js/index.js"></script>
+  <style>
+    body { font-family: sans-serif; margin: 2em; }
+    .user-card { border: 1px solid #ccc; padding: 1em; margin-bottom: 1em; }
+  </style>
+</head>
+<body>
+  <h1>FleXTML Demo</h1>
+  <div id="output"></div>
+
+  <script type="module">
+    import { renderFlextml } from '../js/index.js';
+
+    const sample = {
+      tag: 'div',
+      attrs: { class: 'user-card', 'data-user-id': '42' },
+      children: [
+        { tag: 'h2', content: 'Alice' },
+        { tag: 'p', content: 'Loves programming.' }
+      ]
+    };
+
+    const out = document.getElementById('output');
+    const node = renderFlextml(sample);
+    out.appendChild(node);
+  </script>
+</body>
+</html>
